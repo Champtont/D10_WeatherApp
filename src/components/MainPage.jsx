@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Form } from "react-bootstrap";
 import SingleCity from "./SingleCity";
 import MyFooter from "./MyFooter";
+import { FaRegSmileBeam } from "react-icons/fa";
 
 const MainPage = () => {
   const [query, setQuery] = useState("");
@@ -45,6 +46,11 @@ const MainPage = () => {
             />
           </Form>
         </Col>
+        {query === "" && (
+          <p className="main-directions display-4 mt-5">
+            You can save cities for quick access later! <FaRegSmileBeam />{" "}
+          </p>
+        )}
         {query !== "" && (
           <Col xs={10} className="mx-auto mb-5">
             {cities.map((cityData) => (

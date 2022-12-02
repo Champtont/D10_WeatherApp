@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import MyFooter from "./MyFooter";
 
 const CityPage = () => {
   const [weather, setWeather] = useState([]);
@@ -35,21 +36,57 @@ const CityPage = () => {
   };
   return (
     <>
-      <Container>
-        <h1 className="text-center">Location: {params.cityname}</h1>
+      <div className="mainPage">
+        <h1 className="text-center display-1">Location: {params.cityname}</h1>
         <div>
           <Row>
-            <Col xs={6}>
+            <Col xs={{ span: 8, offset: 2 }}>
               {weather.map((weather) => (
-                <h3 key={weather.id}>Currently: {weather.description}</h3>
+                <Card className="cardbehind" key={weather.id}>
+                  <Card.Header className="cardhead">
+                    <h3>Currently: {weather.description}</h3>
+                  </Card.Header>
+                  <Card.Body>
+                    {main !== null && (
+                      <div>
+                        <Row className="justify-content-center align-items-center">
+                          <Col>
+                            <h4>Temp: {Math.round(main.temp - 273.15)}°C</h4>
+                          </Col>
+                          <Col>
+                            <img
+                              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+                              alt="weather icon"
+                            />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <p>
+                              Feels Like: {Math.round(main.feels_like - 273.15)}
+                            </p>
+                          </Col>
+                          <Col>
+                            <p>High: {Math.round(main.temp_max - 273.15)}</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col></Col>
+                          <Col>
+                            <p>Low: {Math.round(main.temp_min - 273.15)}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    )}
+                  </Card.Body>
+                </Card>
               ))}
             </Col>
-            <Col xs={6}>
-              {main !== null && <h4>{Math.round(main.temp - 273.15)}°C</h4>}
-            </Col>
+            <Col xs={6}></Col>
           </Row>
         </div>
-      </Container>
+        <MyFooter />
+      </div>
     </>
   );
 };
