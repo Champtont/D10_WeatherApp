@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import MyFooter from "./MyFooter";
 
+/*To convert millibars (mb) to inches of mercury (in Hg), divide the millibar reading by 33.86:
+in Hg = mb / 33.86*/
+
 const CityPage = () => {
   const [weather, setWeather] = useState([]);
   const [main, setMain] = useState(null);
@@ -51,7 +54,7 @@ const CityPage = () => {
                       <div>
                         <Row className="justify-content-center align-items-center">
                           <Col>
-                            <h4>Temp: {Math.round(main.temp - 273.15)}°C</h4>
+                            <h4>Temp: {Math.round(main.temp - 273.15)} °C</h4>
                           </Col>
                           <Col>
                             <img
@@ -64,16 +67,17 @@ const CityPage = () => {
                           <Col>
                             <p>
                               Feels Like: {Math.round(main.feels_like - 273.15)}
+                              °C
                             </p>
                           </Col>
                           <Col>
-                            <p>High: {Math.round(main.temp_max - 273.15)}</p>
+                            <p>High: {Math.round(main.temp_max - 273.15)} °C</p>
                           </Col>
                         </Row>
                         <Row>
                           <Col></Col>
                           <Col>
-                            <p>Low: {Math.round(main.temp_min - 273.15)}</p>
+                            <p>Low: {Math.round(main.temp_min - 273.15)} °C</p>
                           </Col>
                         </Row>
                       </div>
