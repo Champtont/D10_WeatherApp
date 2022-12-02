@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 const CityPage = () => {
   const [weather, setWeather] = useState([]);
@@ -9,6 +9,7 @@ const CityPage = () => {
 
   useEffect(() => {
     getCity();
+    console.log("step:1");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -24,6 +25,7 @@ const CityPage = () => {
         let main = data.main;
         console.log(main);
         setMain(main);
+        console.log("step 2");
       } else {
         alert("error fetching results");
       }
@@ -36,10 +38,16 @@ const CityPage = () => {
       <Container>
         <h1 className="text-center">Location: {params.cityname}</h1>
         <div>
-          {weather.map((weather) => (
-            <h3 key={weather.id}>Currently: {weather.description}</h3>
-          ))}
-          <h4>{Math.round(main.temp - 273.15)}°C</h4>
+          <Row>
+            <Col xs={6}>
+              {weather.map((weather) => (
+                <h3 key={weather.id}>Currently: {weather.description}</h3>
+              ))}
+            </Col>
+            <Col xs={6}>
+              {main !== null && <h4>{Math.round(main.temp - 273.15)}°C</h4>}
+            </Col>
+          </Row>
         </div>
       </Container>
     </>
