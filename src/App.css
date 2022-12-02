@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -13,15 +14,30 @@
   }
 }
 
-.App-header {
+.myNav {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.mainPage {
+  background-color: #56a7be;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
 }
 
 .App-link {

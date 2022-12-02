@@ -2,6 +2,7 @@ import { Col, Container } from "react-bootstrap";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
 import SingleCity from "./SingleCity";
+import MyFooter from "./MyFooter";
 
 const MainPage = () => {
   const [query, setQuery] = useState("");
@@ -32,7 +33,7 @@ const MainPage = () => {
 
   return (
     <>
-      <Container>
+      <div className="mainPage">
         <h1 className="text-center">Search for Your City</h1>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
@@ -44,12 +45,15 @@ const MainPage = () => {
             />
           </Form>
         </Col>
-        <Col xs={10} className="mx-auto mb-5">
-          {cities.map((cityData) => (
-            <SingleCity key={cityData.lat} data={cityData} />
-          ))}
-        </Col>
-      </Container>
+        {query !== "" && (
+          <Col xs={10} className="mx-auto mb-5">
+            {cities.map((cityData) => (
+              <SingleCity key={cityData.lat} data={cityData} />
+            ))}
+          </Col>
+        )}
+        <MyFooter />
+      </div>
     </>
   );
 };

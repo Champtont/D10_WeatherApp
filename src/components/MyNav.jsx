@@ -5,7 +5,7 @@ const MyNav = () => {
   const location = useLocation();
 
   return (
-    <Nav defaultActiveKey="/" className="flex-column">
+    <Nav defaultActiveKey="/" className="flex-column myNav">
       <Link
         to="/"
         className={location.pathname === "/" ? "nav-link active" : "nav-link"}

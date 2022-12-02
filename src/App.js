@@ -9,20 +9,21 @@ import { Col, Row } from "react-bootstrap";
 
 function App() {
   return (
-    <Row>
-      <BrowserRouter>
-        <Col xs={2}>
-          <MyNav />
-        </Col>
-        <Col xs={10}>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/city/:lat/:cityname" element={<CityPage />} />
-          </Routes>
-          <MyFooter />
-        </Col>
-      </BrowserRouter>
-    </Row>
+    <BrowserRouter>
+      <div className="App">
+        <Row>
+          <Col xs={2} className="pr-0" stye={{ height: "100%" }}>
+            <MyNav />
+          </Col>
+          <Col xs={10} className="pl-0">
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/city/:lat/:cityname" element={<CityPage />} />
+            </Routes>
+          </Col>
+        </Row>
+      </div>
+    </BrowserRouter>
   );
 }
 
