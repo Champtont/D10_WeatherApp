@@ -17,7 +17,7 @@ function App() {
         <Col xs={10}>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/city/:lat" element={<CityPage />} />
+            <Route path="/city/:lat/:cityname" element={<CityPage />} />
           </Routes>
           <MyFooter />
         </Col>

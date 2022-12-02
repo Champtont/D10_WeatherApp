@@ -19,7 +19,7 @@ const SingleCity = ({ data }) => {
         >
           <TiPlus />
         </Button>
-        <Link to={`/city/${data.lat}`}>{data.name}</Link>
+        <Link to={`/city/${data.lat}/${data.name}`}>{data.name}</Link>
       </Col>
       <Col xs={4}>
         <p>{data.state}</p>
