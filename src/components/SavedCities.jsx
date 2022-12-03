@@ -38,7 +38,7 @@ const SavedCities = () => {
                     variant="danger"
                     onClick={() => {
                       dispatch({
-                        type: "REMOVE_FROM_FAV",
+                        type: "REMOVE_FROM_SAVED",
                         payload: city.lat,
                       });
                     }}
