@@ -1,10 +1,13 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { TiPlus } from "react-icons/ti";
 
 const SingleCity = ({ data }) => {
   const dispatch = useDispatch();
+
+  const cities = useSelector((state) => state.saved.cities);
+
   return (
     <Row
       className="mx-0 mt-3 p-3 listedCity"
@@ -14,7 +17,11 @@ const SingleCity = ({ data }) => {
         <Button
           className="mr-3 add-button"
           onClick={() => {
-            dispatch({ type: "ADD_TO_SAVED", payload: data });
+            if (cities.includes(data)) {
+              alert("This city is already added");
+            } else {
+              dispatch({ type: "ADD_TO_SAVED", payload: data });
+            }
           }}
         >
           <TiPlus />
