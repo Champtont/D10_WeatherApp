@@ -29,6 +29,19 @@
   color: white;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: rgba(240, 248, 255, 0.699);
+}
+
+.nav-link:hover {
+  color: aliceblue;
+}
+
+.active {
+  color: aliceblue;
+}
+
 .mainPage {
   /*background-color: #56a7be;*/
   background-image: url(https://ugc.berkeley.edu/wp-content/uploads/2016/01/thunderstorm-3625405_1920.jpg);
