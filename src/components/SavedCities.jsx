@@ -34,6 +34,7 @@ const SavedCities = () => {
                   <p>{city.state}</p>
                   <p>{city.country}</p>
                   <Button
+                    className="delete-btn"
                     variant="danger"
                     onClick={() => {
                       dispatch({
@@ -43,6 +44,7 @@ const SavedCities = () => {
                     }}
                   >
                     <TfiTrash />
+                    <div className="delete-btn-overlay"></div>
                   </Button>
                 </ListGroup.Item>
               );

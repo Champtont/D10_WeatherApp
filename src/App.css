@@ -19,7 +19,7 @@
 
 .myNav {
   background-image: linear-gradient(darkblue, #282c34);
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -65,6 +65,16 @@
 .listedCity {
   transition: box-shadow 0.5s ease-in-out;
   background-color: transparent;
+  backdrop-filter: blur(2px);
+}
+
+.listedCity button {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.listedCity:hover button {
+  opacity: 100%;
 }
 
 .listedCity a {
@@ -89,7 +99,7 @@
 }
 
 .add-button:active {
-  transform: scale(1.03);
+  transform: scale(0.8);
 }
 
 .add-button-overlay {
@@ -108,6 +118,37 @@
 }
 
 .add-button-overlay:active {
+  background-image: none;
+}
+
+.delete-btn {
+  position: relative;
+  background-color: red;
+  border-bottom: darkred 1pt solid;
+  border-left: darkred 1pt solid;
+  box-shadow: inset rgba(255, 255, 255, 0.705) 1px -1px 5px 0.5px;
+}
+
+.delete-btn:active {
+  transform: scale(0.8);
+}
+
+.delete-btn-overlay {
+  position: absolute;
+  border-radius: 4px;
+  height: 28px;
+  width: 32px;
+  top: 5px;
+  left: 4px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.703),
+    transparent 20%
+  );
+  box-shadow: inset darkred solid 2px -2px 5px 0.5px;
+}
+
+.delete-btn-overlay:active {
   background-image: none;
 }
 
