@@ -56,6 +56,37 @@
   box-shadow: inset 0px 0px 0px 2px rgb(148, 214, 255);
 }
 
+.add-button {
+  position: relative;
+  background-color: blue;
+  border-bottom: darkblue 1pt solid;
+  border-left: darkblue 1pt solid;
+  box-shadow: inset rgba(255, 255, 255, 0.705) 1px -1px 5px 0.5px;
+}
+
+.add-button:active {
+  transform: scale(1.03);
+}
+
+.add-button-overlay {
+  position: absolute;
+  border-radius: 4px;
+  height: 28px;
+  width: 32px;
+  top: 5px;
+  left: 4px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.703),
+    transparent 20%
+  );
+  box-shadow: inset darkblue solid 2px -2px 5px 0.5px;
+}
+
+.add-button-overlay:active {
+  background-image: none;
+}
+
 .cardhead {
   background-color: darkblue;
 }

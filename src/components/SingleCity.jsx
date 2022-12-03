@@ -10,21 +10,26 @@ const SingleCity = ({ data }) => {
       className="mx-0 mt-3 p-3 listedCity"
       style={{ border: "1px solid #00000033", borderRadius: 4 }}
     >
-      <Col xs={4}>
+      <Col xs={3}>
         <Button
-          className="mr-3"
+          className="mr-3 add-button"
           onClick={() => {
             dispatch({ type: "ADD_TO_SAVED", payload: data });
           }}
         >
           <TiPlus />
+          <div className="add-button-overlay"></div>
         </Button>
-        <Link to={`/city/${data.lat}/${data.name}`}>{data.name}</Link>
       </Col>
-      <Col xs={4}>
+      <Col xs={3}>
+        <Link to={`/city/${data.lat}/${data.lon}/${data.name}`}>
+          {data.name}
+        </Link>
+      </Col>
+      <Col xs={3}>
         <p>{data.state}</p>
       </Col>
-      <Col xs={4}>
+      <Col xs={3}>
         <p>{data.country}</p>
       </Col>
     </Row>

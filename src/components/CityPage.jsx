@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import MyFooter from "./MyFooter";
 
 /*To convert millibars (mb) to inches of mercury (in Hg), divide the millibar reading by 33.86:
@@ -20,7 +20,7 @@ const CityPage = () => {
   const getCity = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${params.cityname}&appid=a1ed6c4b6744137e44cc7f17f7c44a39`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${params.lat}&lon=${params.lon}&appid=a1ed6c4b6744137e44cc7f17f7c44a39`
       );
       if (response.ok) {
         const data = await response.json();
