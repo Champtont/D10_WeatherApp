@@ -37,6 +37,7 @@ const CityPage = () => {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className="mainPage">
