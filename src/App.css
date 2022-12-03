@@ -90,6 +90,10 @@
   box-shadow: inset 0px 0px 0px 2px rgb(148, 214, 255);
 }
 
+.listedCity p {
+  margin: 0;
+}
+
 .add-button {
   position: relative;
   background-color: blue;

@@ -24,7 +24,7 @@ const SavedCities = () => {
               return (
                 <ListGroup.Item
                   key={city.lat}
-                  className="d-flex justify-content-between listedCity mb-2"
+                  className="d-flex justify-content-between align-items-center listedCity mb-2"
                 >
                   <p>
                     <Link to={`/city/${city.lat}/${city.lon}/${city.name}`}>
