@@ -62,6 +62,9 @@ const CityPage = () => {
                               alt="weather icon"
                             />
                           </Col>
+                          <Col>
+                            <h5>Humidity: {main.humidity}%</h5>
+                          </Col>
                         </Row>
                         <Row>
                           <Col>
@@ -75,7 +78,9 @@ const CityPage = () => {
                           </Col>
                         </Row>
                         <Row>
-                          <Col></Col>
+                          <Col>
+                            Pressure: {(main.pressure / 33.86).toFixed(1)} Hg
+                          </Col>
                           <Col>
                             <p>Low: {Math.round(main.temp_min - 273.15)} °C</p>
                           </Col>
@@ -86,7 +91,6 @@ const CityPage = () => {
                 </Card>
               ))}
             </Col>
-            <Col xs={6}></Col>
           </Row>
         </div>
         <MyFooter />

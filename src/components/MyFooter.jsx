@@ -1,7 +1,7 @@
 const MyFooter = () => {
   return (
     <div className="footer">
-      <p>WeatherNow</p>
+      <p className="m-0">WeatherNow</p>
     </div>
   );
 };

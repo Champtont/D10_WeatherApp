@@ -11,7 +11,7 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         saved: {
           ...state.saved,
-          companies: [...state.saved.cities, action.payload],
+          cities: [...state.saved.cities, action.payload],
         },
       };
     default:
