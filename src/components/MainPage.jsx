@@ -1,4 +1,4 @@
-import { Col, Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useState } from "react";
 import { Form } from "react-bootstrap";
 import SingleCity from "./SingleCity";
