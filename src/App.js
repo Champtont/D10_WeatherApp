@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Row>
-          <Col xs={2} className="pr-0" stye={{ height: "100%" }}>
+          <Col xs={2} className="pr-0">
             <MyNav />
           </Col>
           <Col xs={10} className="pl-0">

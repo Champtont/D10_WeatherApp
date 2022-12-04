@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import MyFooter from "./MyFooter";
+import Forecast from "./Forecast";
 
 /*To convert millibars (mb) to inches of mercury (in Hg), divide the millibar reading by 33.86:
 in Hg = mb / 33.86*/
@@ -42,8 +43,8 @@ const CityPage = () => {
 
   return (
     <>
-      <div className="mainPage">
-        <h1 className="text-center display-1">Location: {params.cityname}</h1>
+      <div className="cityPage">
+        <h1 className="text-center display-2">Location: {params.cityname}</h1>
         <div>
           <Row>
             <Col xs={{ span: 8, offset: 2 }}>
@@ -169,6 +170,7 @@ const CityPage = () => {
               ))}
             </Col>
           </Row>
+          <Forecast celsius={celsius} />
         </div>
         <MyFooter />
       </div>
