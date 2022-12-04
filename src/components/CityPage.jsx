@@ -53,6 +53,7 @@ const CityPage = () => {
                     <h3>Currently: {weather.description}</h3>
                     {celsius === true && (
                       <Button
+                        className="add-button"
                         onClick={() => {
                           setCelsius(false);
                         }}
@@ -62,6 +63,7 @@ const CityPage = () => {
                     )}
                     {celsius === false && (
                       <Button
+                        className="add-button"
                         onClick={() => {
                           setCelsius(true);
                         }}
