@@ -58,7 +58,12 @@ const Forecast = (props) => {
               <Col>
                 <Card key={info.dt_txt} className="cardbehind mb-5">
                   <Card.Title className="cardhead">
-                    {format(new Date(info.dt_txt), "MMM eeee do h:00 aaa")}
+                    <p className="m-0">
+                      {format(new Date(info.dt_txt), "eeee MMM do")}
+                    </p>
+                    <p className="m-0">
+                      {format(new Date(info.dt_txt), "h:00 aaa")}
+                    </p>
                   </Card.Title>
                   <div>
                     <Card.Img
