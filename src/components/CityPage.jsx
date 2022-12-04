@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import MyFooter from "./MyFooter";
 
 /*To convert millibars (mb) to inches of mercury (in Hg), divide the millibar reading by 33.86:
@@ -9,6 +10,7 @@ in Hg = mb / 33.86*/
 const CityPage = () => {
   const [weather, setWeather] = useState([]);
   const [main, setMain] = useState(null);
+  const [celsius, setCelsius] = useState(true);
   const params = useParams();
 
   useEffect(() => {
@@ -47,15 +49,47 @@ const CityPage = () => {
             <Col xs={{ span: 8, offset: 2 }}>
               {weather.map((weather) => (
                 <Card className="cardbehind" key={weather.id}>
-                  <Card.Header className="cardhead">
+                  <Card.Header className="cardhead d-flex justify-content-between">
                     <h3>Currently: {weather.description}</h3>
+                    {celsius === true && (
+                      <Button
+                        onClick={() => {
+                          setCelsius(false);
+                        }}
+                      >
+                        <RiFahrenheitFill />
+                      </Button>
+                    )}
+                    {celsius === false && (
+                      <Button
+                        onClick={() => {
+                          setCelsius(true);
+                        }}
+                      >
+                        <RiCelsiusFill />
+                      </Button>
+                    )}
                   </Card.Header>
                   <Card.Body>
                     {main !== null && (
                       <div>
                         <Row className="justify-content-center align-items-center">
                           <Col>
-                            <h4>Temp: {Math.round(main.temp - 273.15)} °C</h4>
+                            {celsius === true && (
+                              <h4>
+                                Temp: {Math.round(main.temp - 273.15)}{" "}
+                                <RiCelsiusFill />
+                              </h4>
+                            )}
+                            {celsius === false && (
+                              <h4>
+                                Temp:{" "}
+                                {Math.round(
+                                  ((main.temp - 273.15) * 9) / 5 + 32
+                                )}{" "}
+                                <RiFahrenheitFill />
+                              </h4>
+                            )}
                           </Col>
                           <Col>
                             <img
@@ -69,13 +103,39 @@ const CityPage = () => {
                         </Row>
                         <Row>
                           <Col>
-                            <p>
-                              Feels Like: {Math.round(main.feels_like - 273.15)}
-                              °C
-                            </p>
+                            {celsius === true && (
+                              <p>
+                                Feels Like:{" "}
+                                {Math.round(main.feels_like - 273.15)}{" "}
+                                <RiCelsiusFill />
+                              </p>
+                            )}
+                            {celsius === false && (
+                              <p>
+                                Feels Like:{" "}
+                                {Math.round(
+                                  ((main.feels_like - 273.15) * 9) / 5 + 32
+                                )}{" "}
+                                <RiFahrenheitFill />
+                              </p>
+                            )}
                           </Col>
                           <Col>
-                            <p>High: {Math.round(main.temp_max - 273.15)} °C</p>
+                            {celsius === true && (
+                              <p>
+                                High: {Math.round(main.temp_max - 273.15)}{" "}
+                                <RiCelsiusFill />
+                              </p>
+                            )}
+                            {celsius === false && (
+                              <p>
+                                High:{" "}
+                                {Math.round(
+                                  ((main.temp_max - 273.15) * 9) / 5 + 32
+                                )}{" "}
+                                <RiFahrenheitFill />
+                              </p>
+                            )}
                           </Col>
                         </Row>
                         <Row>
@@ -83,7 +143,21 @@ const CityPage = () => {
                             Pressure: {(main.pressure / 33.86).toFixed(1)} Hg
                           </Col>
                           <Col>
-                            <p>Low: {Math.round(main.temp_min - 273.15)} °C</p>
+                            {celsius === true && (
+                              <p>
+                                Low: {Math.round(main.temp_min - 273.15)}{" "}
+                                <RiCelsiusFill />
+                              </p>
+                            )}
+                            {celsius === false && (
+                              <p>
+                                Low:{" "}
+                                {Math.round(
+                                  ((main.temp_min - 273.15) * 9) / 5 + 32
+                                )}{" "}
+                                <RiFahrenheitFill />
+                              </p>
+                            )}
                           </Col>
                         </Row>
                       </div>
