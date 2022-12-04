@@ -9,8 +9,6 @@ import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 const Forecast = (props) => {
   const params = useParams();
   const [piecesOfData, setPiecesOfData] = useState([]);
-  const [weather, setWeather] = useState([]);
-  const [main, setMain] = useState(null);
 
   const [index, setIndex] = useState(0);
 
@@ -42,8 +40,6 @@ const Forecast = (props) => {
         let piecesOfData = sliceIntoChunks(data.list, 5);
         console.log(piecesOfData);
         setPiecesOfData(piecesOfData);
-        setWeather(data.list.weather);
-        setMain(data.list.main);
         console.log("step 3");
       } else {
         alert("error fetching results");
