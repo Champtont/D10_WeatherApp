@@ -18,7 +18,7 @@ const MainPage = () => {
 
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=a1ed6c4b6744137e44cc7f17f7c44a39`
+        `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=a1ed6c4b6744137e44cc7f17f7c44a39`
       );
       if (response.ok) {
         const data = await response.json();
