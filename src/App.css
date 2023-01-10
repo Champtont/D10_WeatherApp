@@ -3,6 +3,15 @@
 #root {
   overflow: hidden;
 }
+#root
+  > div
+  > div
+  > div.page.col-lg-10.col-md-9.col-12
+  > div
+  > div.d-flex.flex-column.justify-content-center.container {
+  height: 507px;
+  overflow-x: hidden;
+}
 
 .App {
   text-align: center;
@@ -307,5 +316,14 @@
   .carousel-control-next {
     position: fixed;
     bottom: -552px;
+  }
+  #root
+    > div
+    > div
+    > div.page.col-lg-10.col-md-9.col-12
+    > div
+    > div.d-flex.flex-column.justify-content-center.container {
+    height: 507px;
+    overflow-x: hidden;
   }
 }
