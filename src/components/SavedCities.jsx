@@ -12,7 +12,7 @@ const SavedCities = () => {
   return (
     <>
       <div className="cityPage">
-        <h1 className="display-1">My Cities</h1>
+        <h1 className="citytitle">My Cities</h1>
         <Container className="d-flex flex-column justify-content-center">
           {cities.length === 0 && (
             <h2>
@@ -31,7 +31,7 @@ const SavedCities = () => {
                       {city.name}
                     </Link>
                   </p>
-                  <p>{city.state}</p>
+                  <p className="text-truncate">{city.state}</p>
                   <p>{city.country}</p>
                   <Button
                     className="delete-btn"

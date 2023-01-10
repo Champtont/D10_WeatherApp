@@ -35,7 +35,7 @@ const MainPage = () => {
   return (
     <>
       <div className="mainPage">
-        <h1 className="text-center">Search for Your City</h1>
+        <h1 className="text-center pt-5">Search for Your City</h1>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
             <Form.Control

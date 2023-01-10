@@ -50,12 +50,16 @@ const Forecast = (props) => {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} className="my-4 mx-2">
+    <Carousel
+      activeIndex={index}
+      onSelect={handleSelect}
+      className="my-4 mx-2 px-1"
+    >
       {piecesOfData.map((piece, i) => (
         <Carousel.Item key={i}>
           <Row>
             {piece.map((info) => (
-              <Col>
+              <div className="col-xs-12 col-md">
                 <Card key={info.dt_txt} className="cardbehind mb-5">
                   <Card.Title className="cardhead">
                     <p className="m-0">
@@ -108,7 +112,7 @@ const Forecast = (props) => {
                     </div>
                   </Card.Body>
                 </Card>
-              </Col>
+              </div>
             ))}
           </Row>
         </Carousel.Item>

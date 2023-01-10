@@ -12,10 +12,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Row>
-          <Col xs={2} className="pr-0">
+          <Col xs={12} md={3} lg={2} className="pr-0">
             <MyNav />
           </Col>
-          <Col xs={10} className="pl-0">
+          <Col xs={12} md={9} lg={10} className="page">
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/city/:lat/:lon/:cityname" element={<CityPage />} />

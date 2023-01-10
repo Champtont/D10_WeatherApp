@@ -43,11 +43,15 @@ const CityPage = () => {
 
   return (
     <>
-      <div className="cityPage">
-        <h1 className="text-center display-2">Location: {params.cityname}</h1>
+      <div className="cityPage custom-scrollbars-content">
+        <h1 className="text-center localtitle">Location: {params.cityname}</h1>
         <div>
           <Row>
-            <Col xs={{ span: 8, offset: 2 }}>
+            <Col
+              xs={{ span: 12, offset: 0 }}
+              className="px-2"
+              md={{ span: 8, offset: 2 }}
+            >
               {weather.map((weather) => (
                 <Card className="cardbehind" key={weather.id}>
                   <Card.Header className="cardhead d-flex justify-content-between">

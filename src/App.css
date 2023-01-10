@@ -1,9 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
 
+#root {
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
   font-family: Quicksand;
-  overflow: hidden;
+  height: 100vh;
+  overflow: overlay;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #282c34c7;
+  border-radius: 10px;
 }
 
 .App-logo {
@@ -42,6 +57,13 @@
   color: aliceblue;
 }
 
+/*main page styling*/
+.page {
+  padding-left: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .mainPage {
   /*background-color: #56a7be;*/
   background-image: url(https://ugc.berkeley.edu/wp-content/uploads/2016/01/thunderstorm-3625405_1920.jpg);
@@ -52,6 +74,11 @@
   color: aliceblue;
 }
 
+/*City stuff*/
+.citytitle {
+  font-size: 5.5em;
+}
+
 .cityPage {
   /*background-color: #56a7be;*/
   background-image: url(https://ugc.berkeley.edu/wp-content/uploads/2016/01/thunderstorm-3625405_1920.jpg);
@@ -70,10 +97,14 @@
   position: relative;
   overflow: hidden;
   color: aliceblue;
+}
+
+.localtitle {
+  font-size: 4.5em;
 }
 
 .listedCity {
-  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, background-color 0.6s ease-in-out;
   background-color: transparent;
   backdrop-filter: blur(2px);
 }
@@ -98,6 +129,7 @@
 
 .listedCity:hover {
   box-shadow: inset 0px 0px 0px 2px rgb(148, 214, 255);
+  background-color: rgba(0, 0, 0, 0.24);
 }
 
 .listedCity p {
@@ -182,6 +214,7 @@
 
 .footer {
   position: fixed;
+  left: 0;
   bottom: 0;
   background-color: #282c34;
   width: 100%;
@@ -200,5 +233,79 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #root > div > div > div.pr-0.col-lg-2.col-md-3.col-12 {
+    height: 3em;
+    max-width: 100%;
+  }
+  #root > div > div > div.pr-0.col-lg-2.col-md-3.col-12 > div {
+    min-height: 3em;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+  }
+
+  #root > div > div {
+    flex-direction: column;
+  }
+  #root > div > div > div.col-lg-10.col-md-9.col-12 {
+    max-width: 100%;
+  }
+  .page {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .cityPage {
+    padding-top: 3.5em;
+  }
+
+  .mainPage {
+    padding: 0.5em;
+    justify-content: center;
+  }
+  .main-directions {
+    font-size: 25pt;
+  }
+  #root
+    > div
+    > div
+    > div.page.col-lg-10.col-md-9.col-12
+    > div
+    > div.mx-auto.mb-5.col-10 {
+    height: 507px;
+    overflow-x: hidden;
+  }
+  .listedCity {
+    padding: 0.2em;
+  }
+  .h1 h1 {
+    font-size: 2em;
+  }
+  .citytitle {
+    font-size: 2.5em;
+    margin-top: 2em;
+  }
+  .localtitle {
+    font-size: 2em;
+  }
+  .carousel-indicators {
+    position: fixed;
+    right: 10px;
+    left: 10px;
+    bottom: 65px;
+  }
+  .carousel-control-prev {
+    position: fixed;
+    bottom: -552px;
+  }
+  .carousel-control-next {
+    position: fixed;
+    bottom: -552px;
   }
 }
