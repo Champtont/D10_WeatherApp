@@ -322,6 +322,19 @@
     > div
     > div.page.col-lg-10.col-md-9.col-12
     > div
+    > div:nth-child(2)
+    > div.row
+    > div
+    > div
+    > div.cardhead.d-flex.justify-content-between.card-header
+    > button {
+    z-index: 2000;
+  }
+  #root
+    > div
+    > div
+    > div.page.col-lg-10.col-md-9.col-12
+    > div
     > div.d-flex.flex-column.justify-content-center.container {
     height: 507px;
     overflow-x: hidden;

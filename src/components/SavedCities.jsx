@@ -13,7 +13,7 @@ const SavedCities = () => {
     <>
       <div className="cityPage">
         <h1 className="citytitle">My Cities</h1>
-        <Container className="d-flex flex-column justify-content-center">
+        <Container className="d-flex flex-column">
           {cities.length === 0 && (
             <h2>
               No saved Cities Yet <GiShrug />{" "}
